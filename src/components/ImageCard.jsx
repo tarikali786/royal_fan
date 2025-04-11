@@ -1,7 +1,7 @@
 import { useState } from "react";
 import Skeleton from "@mui/material/Skeleton";
 
-const ImageComponent = ({ src, alt, imgCss, cardCss, variant }) => {
+const ImageCard = ({ src, alt, cardCss, variant }) => {
   const [loading, setLoading] = useState(true);
 
   return (
@@ -22,8 +22,7 @@ const ImageComponent = ({ src, alt, imgCss, cardCss, variant }) => {
       <img
         src={src}
         alt={alt || "Image"}
-        className={`rounded-lg ${imgCss || "object-contain"} 
-          transition-opacity duration-500 
+        className={`rounded-lg object-contain transition-opacity duration-500 
           ${loading ? "opacity-0" : "opacity-100"}`}
         onLoad={() => setLoading(false)}
         loading="lazy"
@@ -32,4 +31,4 @@ const ImageComponent = ({ src, alt, imgCss, cardCss, variant }) => {
   );
 };
 
-export default ImageComponent;
+export default ImageCard;

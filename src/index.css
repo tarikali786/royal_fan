@@ -13,3 +13,6 @@ img {
   --color-primary: #c89570;
   --color-secondry: #3d34ee;
 }
+button{
+  cursor: pointer;
+}

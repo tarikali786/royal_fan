@@ -19,7 +19,7 @@ export const Hero = () => {
   const [loading, setLoading] = useState(true);
 
   return (
-    <div className="relative w-full">
+    <div className="relative w-full bg-primary">
       <Swiper
         modules={[Autoplay, Pagination, Navigation]}
         autoplay={{

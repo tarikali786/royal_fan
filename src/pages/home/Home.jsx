@@ -7,7 +7,7 @@ export const Home = () => {
   return (
     <>
       <Hero />
-      <div className="flex flex-col gap-8 common-padding border border-black w-full h-[100vh] ">
+      <div className="flex flex-col  w-full  common-padding  ">
         {Object.keys(productData).map((category) => (
           <Products
             key={category}
