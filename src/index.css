@@ -1,0 +1,15 @@
+@import "tailwindcss";
+
+.common-padding {
+  @apply px-4 md:px-14 lg:px-34 xl:px-44;
+}
+
+img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+@theme inline {
+  --color-primary: #c89570;
+  --color-secondry: #3d34ee;
+}
