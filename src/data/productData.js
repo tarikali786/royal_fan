@@ -1,9 +1,7 @@
-import { nanoid } from "nanoid";
-
 export const productData = [
   // Ceiling Fans (10 items)
   {
-    id: nanoid(),
+    id: "cf001",
     name: "Bajaj Glide Ceiling Fan",
     brand: "Bajaj",
     description:
@@ -19,7 +17,7 @@ export const productData = [
     category: "Ceiling Fan",
   },
   {
-    id: nanoid(),
+    id: "cf002",
     name: "Orient Electric Apex",
     brand: "Orient",
     description:
@@ -34,7 +32,7 @@ export const productData = [
     category: "Ceiling Fan",
   },
   {
-    id: nanoid(),
+    id: "cf003",
     name: "Havells Velocity",
     brand: "Havells",
     description:
@@ -49,7 +47,7 @@ export const productData = [
     category: "Ceiling Fan",
   },
   {
-    id: nanoid(),
+    id: "cf004",
     name: "Usha Bloom Daffodil",
     brand: "Usha",
     description:
@@ -64,7 +62,7 @@ export const productData = [
     category: "Ceiling Fan",
   },
   {
-    id: nanoid(),
+    id: "cf005",
     name: "Crompton Energion",
     brand: "Crompton",
     description:
@@ -79,7 +77,7 @@ export const productData = [
     category: "Ceiling Fan",
   },
   {
-    id: nanoid(),
+    id: "cf006",
     name: "Luminous Dhoom",
     brand: "Luminous",
     description:
@@ -94,7 +92,7 @@ export const productData = [
     category: "Ceiling Fan",
   },
   {
-    id: nanoid(),
+    id: "cf007",
     name: "Atomberg Renesa",
     brand: "Atomberg",
     description:
@@ -109,7 +107,7 @@ export const productData = [
     category: "Ceiling Fan",
   },
   {
-    id: nanoid(),
+    id: "cf008",
     name: "Orpat OFC",
     brand: "Orpat",
     description:
@@ -124,7 +122,7 @@ export const productData = [
     category: "Ceiling Fan",
   },
   {
-    id: nanoid(),
+    id: "cf009",
     name: "Khaitan Elegance",
     brand: "Khaitan",
     description:
@@ -139,7 +137,7 @@ export const productData = [
     category: "Ceiling Fan",
   },
   {
-    id: nanoid(),
+    id: "cf010",
     name: "Surya Neo",
     brand: "Surya",
     description:
@@ -156,7 +154,7 @@ export const productData = [
 
   // Table Fans (10 items)
   {
-    id: nanoid(),
+    id: "tf001",
     name: "Crompton HiFlo Table Fan",
     brand: "Crompton",
     description: "Portable table fan with tilting head and high-speed motor.",
@@ -167,7 +165,7 @@ export const productData = [
     category: "Table Fan",
   },
   {
-    id: nanoid(),
+    id: "tf002",
     name: "Usha Max Air Table Fan",
     brand: "Usha",
     description:
@@ -179,7 +177,7 @@ export const productData = [
     category: "Table Fan",
   },
   {
-    id: nanoid(),
+    id: "tf003",
     name: "Bajaj Flash Table Fan",
     brand: "Bajaj",
     description:
@@ -191,7 +189,7 @@ export const productData = [
     category: "Table Fan",
   },
   {
-    id: nanoid(),
+    id: "tf004",
     name: "Orient Electric Ultra",
     brand: "Orient",
     description: "Premium table fan with metal body and powerful airflow.",
@@ -202,7 +200,7 @@ export const productData = [
     category: "Table Fan",
   },
   {
-    id: nanoid(),
+    id: "tf005",
     name: "Havells Fresco",
     brand: "Havells",
     description: "Stylish table fan with ABS blades and tilt adjustment.",
@@ -213,7 +211,7 @@ export const productData = [
     category: "Table Fan",
   },
   {
-    id: nanoid(),
+    id: "tf006",
     name: "Orpat OTF",
     brand: "Orpat",
     description: "Economical table fan with reliable performance.",
@@ -224,7 +222,7 @@ export const productData = [
     category: "Table Fan",
   },
   {
-    id: nanoid(),
+    id: "tf007",
     name: "Luminous Brio",
     brand: "Luminous",
     description:
@@ -236,7 +234,7 @@ export const productData = [
     category: "Table Fan",
   },
   {
-    id: nanoid(),
+    id: "tf008",
     name: "Khaitan Turbo",
     brand: "Khaitan",
     description: "Powerful table fan with 3-speed control and tilt adjustment.",
@@ -247,7 +245,7 @@ export const productData = [
     category: "Table Fan",
   },
   {
-    id: nanoid(),
+    id: "tf009",
     name: "Surya Cool Breeze",
     brand: "Surya",
     description:
@@ -259,7 +257,7 @@ export const productData = [
     category: "Table Fan",
   },
   {
-    id: nanoid(),
+    id: "tf010",
     name: "V-Guard Elegant",
     brand: "V-Guard",
     description: "Premium table fan with metallic finish and wide airflow.",
@@ -272,7 +270,7 @@ export const productData = [
 
   // Pedestal Fans (8 items)
   {
-    id: nanoid(),
+    id: "pf001",
     name: "Bajaj Majesty Pedestal Fan",
     brand: "Bajaj",
     description:
@@ -287,7 +285,7 @@ export const productData = [
     category: "Pedestal Fan",
   },
   {
-    id: nanoid(),
+    id: "pf002",
     name: "Usha Air Cool Pedestal Fan",
     brand: "Usha",
     description: "Powerful airflow with wide oscillation and sturdy base.",
@@ -301,7 +299,7 @@ export const productData = [
     category: "Pedestal Fan",
   },
   {
-    id: nanoid(),
+    id: "pf003",
     name: "Crompton Hill Briz Pedestal Fan",
     brand: "Crompton",
     description:
@@ -316,7 +314,7 @@ export const productData = [
     category: "Pedestal Fan",
   },
   {
-    id: nanoid(),
+    id: "pf004",
     name: "Havells Amica Pedestal Fan",
     brand: "Havells",
     description: "Sleek design with powerful motor and wide oscillation.",
@@ -330,7 +328,7 @@ export const productData = [
     category: "Pedestal Fan",
   },
   {
-    id: nanoid(),
+    id: "pf005",
     name: "Orient Electric Stand Fan",
     brand: "Orient",
     description:
@@ -345,7 +343,7 @@ export const productData = [
     category: "Pedestal Fan",
   },
   {
-    id: nanoid(),
+    id: "pf006",
     name: "Luminous Turbo Pedestal Fan",
     brand: "Luminous",
     description: "High-performance pedestal fan with wide coverage.",
@@ -359,7 +357,7 @@ export const productData = [
     category: "Pedestal Fan",
   },
   {
-    id: nanoid(),
+    id: "pf007",
     name: "Orpat OPF Pedestal Fan",
     brand: "Orpat",
     description: "Economical pedestal fan with reliable performance.",
@@ -373,7 +371,7 @@ export const productData = [
     category: "Pedestal Fan",
   },
   {
-    id: nanoid(),
+    id: "pf008",
     name: "Khaitan Grand Pedestal Fan",
     brand: "Khaitan",
     description: "Premium pedestal fan with remote control and timer function.",
@@ -389,7 +387,7 @@ export const productData = [
 
   // Wall Fans (6 items)
   {
-    id: nanoid(),
+    id: "wf001",
     name: "Crompton Wall Fan",
     brand: "Crompton",
     description: "Heavy-duty wall mounted fan with 3-speed control.",
@@ -400,7 +398,7 @@ export const productData = [
     category: "Wall Fan",
   },
   {
-    id: nanoid(),
+    id: "wf002",
     name: "Usha Striker Wall Fan",
     brand: "Usha",
     description: "Powerful wall fan with wide oscillation and metal grill.",
@@ -411,7 +409,7 @@ export const productData = [
     category: "Wall Fan",
   },
   {
-    id: nanoid(),
+    id: "wf003",
     name: "Bajaj Storm Wall Fan",
     brand: "Bajaj",
     description: "High-speed wall fan with tilt adjustment and durable motor.",
@@ -422,7 +420,7 @@ export const productData = [
     category: "Wall Fan",
   },
   {
-    id: nanoid(),
+    id: "wf004",
     name: "Havells Stealth Wall Fan",
     brand: "Havells",
     description: "Sleek wall fan with ABS blades and powerful airflow.",
@@ -433,7 +431,7 @@ export const productData = [
     category: "Wall Fan",
   },
   {
-    id: nanoid(),
+    id: "wf005",
     name: "Orient Electric Wall Fan",
     brand: "Orient",
     description: "Durable wall fan with metal body and wide oscillation.",
@@ -444,7 +442,7 @@ export const productData = [
     category: "Wall Fan",
   },
   {
-    id: nanoid(),
+    id: "wf006",
     name: "Luminous Wall Fan",
     brand: "Luminous",
     description: "High-performance wall fan with 3-speed settings.",
@@ -457,7 +455,7 @@ export const productData = [
 
   // Exhaust Fans (6 items)
   {
-    id: nanoid(),
+    id: "ef001",
     name: "Crompton Greaves Exhaust Fan",
     brand: "Crompton",
     description:
@@ -472,7 +470,7 @@ export const productData = [
     category: "Exhaust Fan",
   },
   {
-    id: nanoid(),
+    id: "ef002",
     name: "Havells Ventil Air Exhaust Fan",
     brand: "Havells",
     description: "Powerful exhaust fan with metal body and high airflow.",
@@ -486,7 +484,7 @@ export const productData = [
     category: "Exhaust Fan",
   },
   {
-    id: nanoid(),
+    id: "ef003",
     name: "Usha Aero Exhaust Fan",
     brand: "Usha",
     description: "Plastic body exhaust fan with corrosion-resistant design.",
@@ -500,7 +498,7 @@ export const productData = [
     category: "Exhaust Fan",
   },
   {
-    id: nanoid(),
+    id: "ef004",
     name: "Orient Electric Exhaust Fan",
     brand: "Orient",
     description: "Durable exhaust fan with metal blades and high-speed motor.",
@@ -514,7 +512,7 @@ export const productData = [
     category: "Exhaust Fan",
   },
   {
-    id: nanoid(),
+    id: "ef005",
     name: "Bajaj Ventura Exhaust Fan",
     brand: "Bajaj",
     description: "High-performance exhaust fan with low noise operation.",
@@ -528,7 +526,7 @@ export const productData = [
     category: "Exhaust Fan",
   },
   {
-    id: nanoid(),
+    id: "ef006",
     name: "Luminous Exhaust Fan",
     brand: "Luminous",
     description: "Economical exhaust fan with reliable performance.",

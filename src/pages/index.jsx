@@ -1,1 +1,1 @@
-export { ComponentA, ComponentB } from "./home"; // Replace with actual component names
+export * from "./products";

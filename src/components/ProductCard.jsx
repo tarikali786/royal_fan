@@ -1,9 +1,29 @@
-import React from "react";
+import React, { memo } from "react";
 import ImageCard from "./ImageCard";
+import { useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { addToCart } from "../features/slices/cartSlice";
 
-export const ProductCard = ({ product }) => {
+export const ProductCard = memo(({ product }) => {
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
+
+  const handleProductDetails = () => {
+    navigate(`/products/${product.id}`, {
+      state: { product },
+    });
+  };
+
+  const handleAddToCart = (e) => {
+    e.stopPropagation();
+    dispatch(addToCart(product));
+  };
+
   return (
-    <div className="bg-white shadow-md rounded-xl p-3 w-full">
+    <div
+      onClick={handleProductDetails}
+      className="bg-white shadow-md rounded-xl p-3 w-full cursor-pointer"
+    >
       <ImageCard
         src={product.thumbnail}
         alt={product.name}
@@ -18,7 +38,10 @@ export const ProductCard = ({ product }) => {
         <p className="font-bold text-green-600 mt-1">₹{product.price}</p>
         <p className="text-xs text-gray-400">Warranty: {product.warranty}</p>
         <div className="mt-2 flex gap-2 justify-between">
-          <button className="bg-green-600 text-white text-sm px-3 py-1.5 rounded-lg hover:bg-green-700">
+          <button
+            onClick={handleAddToCart}
+            className="bg-green-600 text-white text-sm px-3 py-1.5 rounded-lg hover:bg-green-700"
+          >
             Add to Cart
           </button>
           <button className="bg-primary text-white text-sm px-3 py-1.5 rounded-lg hover:bg-gray-800">
@@ -28,4 +51,6 @@ export const ProductCard = ({ product }) => {
       </div>
     </div>
   );
-};
+});
+
+ProductCard.displayName = "Product";
