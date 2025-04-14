@@ -5,9 +5,11 @@ import { Link } from "react-router-dom";
 import { SearchBar } from "./SearchBar";
 import FilterListIcon from "@mui/icons-material/FilterList";
 import { FilterPanel } from "./Filters";
-
+import { useSelector } from "react-redux";
+import Tooltip from "@mui/material/Tooltip";
 export const Header = () => {
   const [showFilter, setShowFilter] = useState(false);
+  const { cartItems } = useSelector((state) => state.cart);
 
   return (
     <>
@@ -23,13 +25,14 @@ export const Header = () => {
         {/* Right Side Navigation */}
         <div className="flex items-center gap-4 md:gap-8">
           {/* Filter Toggle */}
-          <div
-            className="cursor-pointer"
-            onClick={() => setShowFilter(!showFilter)}
-          >
-            <FilterListIcon style={{ fontSize: "34px" }} />
-          </div>
-
+          <Tooltip title="Filter">
+            <div
+              className="cursor-pointer"
+              onClick={() => setShowFilter(!showFilter)}
+            >
+              <FilterListIcon style={{ fontSize: "34px" }} />
+            </div>
+          </Tooltip>
           {/* Cart */}
           <Link
             to="/cart"
@@ -38,7 +41,7 @@ export const Header = () => {
             <div className="relative size-6 md:size-8">
               <img src={ShoppingCartIcon} alt="Cart" />
               <span className="absolute -top-2 right-0 size-5 text-sm bg-green-500 text-white rounded-full flex items-center justify-center">
-                0
+                {cartItems.length || 0}
               </span>
             </div>
             <span className="hidden md:block">Cart</span>

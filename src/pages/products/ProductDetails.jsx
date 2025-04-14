@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { useParams } from "react-router-dom";
 import { productData } from "../../data/productData";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -7,10 +7,14 @@ import "swiper/css/navigation";
 import { Navigation } from "swiper/modules";
 import ImageCard from "../../components/ImageCard";
 import { ProductCard } from "../../components";
+import { useDispatch } from "react-redux";
+import { addToCart } from "../../features/slices/cartSlice";
 
 export const ProductDetails = () => {
   const { id } = useParams();
   const product = productData.find((item) => item.id === id);
+  const dispatch = useDispatch();
+  const [quantity, setQuantity] = useState(1);
 
   if (!product)
     return <div className="text-center py-8">Product not found</div>;
@@ -19,6 +23,10 @@ export const ProductDetails = () => {
   const relatedProducts = productData.filter(
     (item) => item.category === product.category && item.id !== product.id
   );
+
+  const handleAddToCart = () => {
+    dispatch(addToCart({ ...product, quantity }));
+  };
 
   return (
     <>
@@ -58,8 +66,27 @@ export const ProductDetails = () => {
           <p className="text-sm text-gray-500">Warranty: {product.warranty}</p>
           <p className="text-gray-600">{product.description}</p>
 
+          {/* Quantity Selector */}
+          <div className="flex items-center gap-3 mt-2">
+            <label className="text-sm text-gray-700">Qty:</label>
+            <select
+              value={quantity}
+              onChange={(e) => setQuantity(Number(e.target.value))}
+              className="border px-2 py-1 rounded-md text-sm"
+            >
+              {[...Array(10)].map((_, i) => (
+                <option key={i} value={i + 1}>
+                  {i + 1}
+                </option>
+              ))}
+            </select>
+          </div>
+
           <div className="flex gap-4 mt-6">
-            <button className="bg-green-600 hover:bg-green-700 text-white px-6 py-2 rounded-lg">
+            <button
+              onClick={handleAddToCart}
+              className="bg-green-600 hover:bg-green-700 text-white px-6 py-2 rounded-lg"
+            >
               Add to Cart
             </button>
             <button className="bg-primary hover:bg-gray-800 text-white px-6 py-2 rounded-lg">

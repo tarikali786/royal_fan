@@ -1,4 +1,4 @@
-import React, { memo } from "react";
+import React, { memo, useState } from "react";
 import ImageCard from "./ImageCard";
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
@@ -7,6 +7,7 @@ import { addToCart } from "../features/slices/cartSlice";
 export const ProductCard = memo(({ product }) => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
+  const [quantity, setQuantity] = useState(1);
 
   const handleProductDetails = () => {
     navigate(`/products/${product.id}`, {
@@ -16,7 +17,7 @@ export const ProductCard = memo(({ product }) => {
 
   const handleAddToCart = (e) => {
     e.stopPropagation();
-    dispatch(addToCart(product));
+    dispatch(addToCart({ ...product, quantity }));
   };
 
   return (
@@ -29,14 +30,36 @@ export const ProductCard = memo(({ product }) => {
         alt={product.name}
         cardCss={"w-full h-40 object-cover rounded-md"}
       />
-      <div className="mt-2 space-y-0.5">
+
+      <div className="mt-2 space-y-1">
         <h3 className="font-semibold text-base line-clamp-1">{product.name}</h3>
         <p className="text-sm text-gray-600 font-semibold">{product.brand}</p>
         <p className="text-sm text-gray-500 line-clamp-2">
           {product.description}
         </p>
         <p className="font-bold text-green-600 mt-1">₹{product.price}</p>
-        <p className="text-xs text-gray-400">Warranty: {product.warranty}</p>
+
+        <div className="flex justify-between items-center">
+          <p className="text-xs text-gray-400">Warranty: {product.warranty}</p>
+
+          {/* Quantity Selector */}
+          <div className="flex items-center gap-2 mt-2">
+            <label className="text-sm text-gray-700">Qty:</label>
+            <select
+              value={quantity}
+              onClick={(e) => e.stopPropagation()}
+              onChange={(e) => setQuantity(Number(e.target.value))}
+              className="border px-2 py-0.5 rounded-md text-sm"
+            >
+              {[...Array(10)].map((_, i) => (
+                <option key={i} value={i + 1}>
+                  {i + 1}
+                </option>
+              ))}
+            </select>
+          </div>
+        </div>
+
         <div className="mt-2 flex gap-2 justify-between">
           <button
             onClick={handleAddToCart}
