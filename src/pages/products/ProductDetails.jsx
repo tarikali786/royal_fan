@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { productData } from "../../data/productData";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -15,7 +15,9 @@ export const ProductDetails = () => {
   const product = productData.find((item) => item.id === id);
   const dispatch = useDispatch();
   const [quantity, setQuantity] = useState(1);
-
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   if (!product)
     return <div className="text-center py-8">Product not found</div>;
 

@@ -16,3 +16,7 @@ img {
 button{
   cursor: pointer;
 }
+
+hr{
+  color: rgb(199, 199, 199);
+}

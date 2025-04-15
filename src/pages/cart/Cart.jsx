@@ -1,6 +1,6 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import {
   removeFromCart,
   updateQuantity,
@@ -9,8 +9,12 @@ import ImageCard from "../../components/ImageCard";
 
 export const Cart = () => {
   const dispatch = useDispatch();
+  const navigate = useNavigate();
   const { cartItems } = useSelector((state) => state.cart);
 
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   const handleQuantityChange = (id, newQty) => {
     if (newQty < 1) return;
     dispatch(updateQuantity({ id, quantity: newQty }));
@@ -25,6 +29,11 @@ export const Cart = () => {
     0
   );
 
+  const handleProceedToCheckout = () => {
+    if (cartItems.length === 0) return;
+    localStorage.removeItem("directOrderItem");
+    navigate("/order", { state: { cartItems } });
+  };
   const gst = Math.round(subtotal * 0.18);
   const shipping = subtotal > 500 ? 0 : 50;
   const total = subtotal + gst + shipping;
@@ -108,7 +117,10 @@ export const Cart = () => {
             </div>
           </div>
 
-          <button className="mt-6 w-full bg-green-600 hover:bg-green-700 text-white py-2 rounded-lg">
+          <button
+            onClick={handleProceedToCheckout}
+            className="mt-6 w-full bg-green-600 hover:bg-green-700 text-white py-2 rounded-lg"
+          >
             Proceed to Checkout
           </button>
         </div>

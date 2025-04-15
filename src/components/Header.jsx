@@ -49,7 +49,7 @@ export const Header = () => {
 
           {/* Orders */}
           <Link
-            to="/orders"
+            to="/order-item"
             className="hidden md:flex items-center gap-1 text-white cursor-pointer"
           >
             <span>Orders</span>
